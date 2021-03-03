@@ -1,15 +1,65 @@
+header {
+    margin: 0px;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 2rem;
-}
-
-.banner{
-    margin-top: 2rem;
-    color: blueviolet;
-    margin-bottom: 1rem;
+    background-color: grey;
 }
 
 footer{
     margin-top: 5rem;
     text-align: center;
+    color:blueviolet;
+}
+
+input {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.menu {
+    padding-bottom: 10px;
+}
+
+.banner{
+    margin-top: 20px;
+    color:black;
+}
+
+.picMichael {
+    width: 500px;
+    height: 270px;
+    margin: 40px 0px;
+}
+
+.contactForm {
+    margin:5em;
+}
+
+.picDwight {
+    margin: 2em;
+    width: 800px;
+    height: 800px;
+}
+
+.caption {
+    margin-left: 2em; 
+    font-size: 20px;
 }
