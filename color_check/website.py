@@ -26,14 +26,9 @@ def show_color():
     user_submitted_string = request.form.get('color')
     color_hex_code = get_color_code(user_submitted_string)
 
-    if not color_hex_code:
-        msg = "Invalid Input"
-        record_log(user_submitted_string, msg)
-    else:
-        msg = "Valid Input"
-        record_log(user_submitted_string, msg)
-    
-    return render_template('color.html', page_title="Show Color", color_hex_code=color_hex_code, color = user_submitted_string)
+    if request.method == 'POST':
+        logging.info(f'New entry: {user_submitted_string}')
+        return render_template('color.html', page_title="Show Color", color_hex_code=color_hex_code, color=user_submitted_string)
 
 
 
