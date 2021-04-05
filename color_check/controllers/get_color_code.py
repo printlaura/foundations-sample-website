@@ -16,6 +16,6 @@ def get_color_code(color_name):
 
     with open('./color_check/data/css-color-names.json', 'r') as colors_data:
         data = json.load(colors_data)
-        hex_code = data.get(color_name, "That is not a color.")
+        hex_code = data.get(color_name.lower(), "That is not a color.")
 
-    return hex_code
+        return hex_code

@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p>The color you entered was: {{ color_hex_code }}</p>
+
+{% if color_hex_code == False %}
+    <p>It seems like you entered an invalid color.</p>
+
+{% else %}
+    <p>The hex code of the color you entered is: {{ color_hex_code }}</p>
     <p>and it looks like this:</p>
-    <div style="background: {{ color_hex_code }}; height: 75px; width: 75px;"></div>
+    <div id="colorSquare" style="background-color: {{ color_hex_code }}"></div>
+
+{% endif %}
+
 {% endblock %}
