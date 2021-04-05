@@ -1,8 +1,8 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, request
+import logging
 from color_check.controllers.get_color_code import get_color_code
-app = Flask(__name__)
 
+app = Flask(__name__)
 
 @app.route('/')
 def index():
@@ -21,11 +21,17 @@ def show_color():
     # - if the color doesn't exist, give the user a useful error message.
     # - create a log.txt file which records (logs) the user requests. 
 
-    user_submitted_string = 'blue'
+    user_submitted_string = request.form['color']
     color_hex_code = get_color_code(user_submitted_string)
 
-    return render_template('color.html', page_title="Show Color",
-                           color_hex_code=color_hex_code)
+    if request.method == 'POST':
+        logging.basicConfig(format = '%(asctime)s %(message)s',
+                            datefmt = '%m/%d/%Y %I:%M:%S %p',
+                            filename = 'tmp/logs.log',
+                            level=logging.DEBUG)
+        logging.info(f'Info: {user_submitted_string}')
+        return render_template('color.html', page_title="Show Color", color_hex_code=color_hex_code)
+
 
 
 if __name__ == "__main__":

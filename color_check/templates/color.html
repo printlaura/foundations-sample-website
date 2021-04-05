@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p> Edit this file to show the name of the color and to render a square of that color itself! 
-    </p>
-
+    <p>The color you entered was: {{ color_hex_code }}</p>
+    <p>and it looks like this:</p>
+    <div style= "background:{{color_hex_code}}; height:75px; width:75px; border-radius:50%;"></div>
 {% endblock %}
