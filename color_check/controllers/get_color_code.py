@@ -14,7 +14,7 @@ def get_color_code(color_name):
     # Open the file at data/css-color-names.json, and return the hex code
     # The file can be considered as JSON format, or as a Python dictionary.
 
-    color_name_lower = color_name.lower()
+    color_name_lower = str(color_name).lower()
 
     with open('./color_check/data/css-color-names.json', 'r') as colors_data:
         data = json.load(colors_data)
